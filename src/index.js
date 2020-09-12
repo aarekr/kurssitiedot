@@ -72,17 +72,18 @@ const Part = ({ part }) => {
 }
 
 const Total = ({ parts }) => {
-  console.log(parts);
-  let i = 0;
-  let sum = 0;
+  console.log(parts)
+  let i = 0
+  const taulu = [] // luodaan uusi tyhjä taulu
   while(i < parts.length){
-    sum += parts[i].exercises;
-    i++;
+    taulu.push(parts[i].exercises) // syötetään määrät tauluun
+    i++
   }
-  
+  const reducer = (acc, curVal) => acc + curVal; // laskenta
+
   return(
     <div>
-      <p>Number of exercises {sum} </p>
+      <b>Total of {taulu.reduce(reducer)} exercises </b>
     </div>
   )
 }
