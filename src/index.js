@@ -72,9 +72,17 @@ const Part = ({ part }) => {
 }
 
 const Total = ({ parts }) => {
+  console.log(parts);
+  let i = 0;
+  let sum = 0;
+  while(i < parts.length){
+    sum += parts[i].exercises;
+    i++;
+  }
+  
   return(
     <div>
-      <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
+      <p>Number of exercises {sum} </p>
     </div>
   )
 }
